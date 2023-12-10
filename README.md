@@ -3,8 +3,8 @@
 <p align="center">
   <img src="./sources/images/DarkDriftLogo.png"
     alt="Dark Drift Logo"
-    height="1024"
-    width="1024">
+    height="768"
+    width="768">
 </p>
 
 #
