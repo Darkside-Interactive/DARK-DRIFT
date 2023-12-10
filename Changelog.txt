@@ -1,0 +1,86 @@
+//==============================================================================
+//                                  Changelog v2.0
+//==============================================================================
+// - [Script] Rewrote script so that it now uses y_ini instead of dini. Should be a lot faster.
+// - [Script] Script now uses an enum instead of directly loading the values from the files.
+// - [Script] Script now uses foreach instead of regular player loops.
+// - [Added] Added another house selling option. People can set their house for sale for a price they choose (between MIN_HOUSE_VALUE and MAX_HOUSE_VALUE).
+// 	- People can buy the house while the houseowner is offline. The houseowner will then get the money and a message upon next connect.
+// - [Added] Added cancelling option for house selling in /housemenu.
+// - [Added] Additional updates around the script.
+// - [Added] Added house privacy option in /housemenu. The house owner can open/close their house for guests.
+// - [Script] Script now uses zcmd instead of dcmd for increased speed.
+// - [Added] Housecars are now personal and can only be driven by the owner of the house.
+// - [Added] It now uses SA:MP 0.3c colour embedding and the option to only use 1 button - you must update to SA:MP 0.3c to use this version unless you edit the script yourself.
+// - [Added] Added dynamic house interiors - the data is loaded from files now. You don't have to worry about manually editing the script anymore.
+// - [Added] Added /createhint.
+// - [Added] Added /changehintspawn.
+// - [Added] Added /removehint.
+// - [Added] Added a define (GH_USE_HOUSESTORAGE) to decide whether you want to use the house storage feature or not.
+// - [Script] Updated the configuration section of this script. Features are no longer disabled by commenting then out. Simply just change "true" to "false" if you want to disable a feature.
+// - [Added] Added /myhouses - when selecting one of your houses you can decide whether you want to show information about that house or teleport to it (disabled by default).
+// - [Script] Instead of looping trough all houses and checking if the file exists it now uses foreach for this which should speed up the script a bit.
+// - [Changed] 3D text labels are now streamed using the streamer plugin as I finnaly solved the issue with them not drawing.
+// - [Changed] Other minor changes around the script.
+// - [Removed] Removed the debug printf's.
+// - [Changed] Decapitalized all words which should not be capitalized all over the script.
+// - [Fixed] Fixed some typos which were repeating all over the script.
+// - [Added] More dialogs, yay!
+// - [Script] Script now deletes PVars on filterscript exit to reduce memory usage.
+// - [Script] IsInHouse "char" array for increased speed (compared to checking if a player is in a house using GetPVarInt. However you can still access the IsInHouse PVar in other scripts using GetPVarInt).
+// - [Fixed] Last two "missing" message macros added to the script.
+// - [Added] Added the ability to breakin to houses. There is a 30% chance for successfully breaking into the house and 70% chance of failing. You can disable this feature by setting the GH_ALLOW_BREAKIN define to false.
+// - [Added] Added an user management menu to /housemenu. You can kick out players from your house, give players house keys to your house and take away house keys from players.
+// - [Added] Players with house keys can enter the house automaticly - just like the house owner. They can not access the house menu though.
+// - [Added] Added the ability to "upgrade" your house with things like house alarm, security camera, security dog and better houselock. All those "upgrades" have their own ability.
+// - [Added] Players will gain wanted level when they succeed/fail at breaking into/robbing a house IF the house has either an alarm or a security camera. You can disable this feature by setting the GH_GIVE_WANTEDLEVEL define to false.
+// - [Added] Added the ability to rob houses. The player can rob a maximum of X percent of the house storage (25% by default - can be changed in the script). But there is a maximum limit of how much money can be stolen. You can only rob houses if the houseowner is connected.
+// - [Added] Players will take X damage from each bite from the security dog of a house when attempting to breakin or rob a house (values can be changed in the script. The default is -25 health points per bite. And the dog bites 3 times).
+// - [Added] It will be harder to breakin to your house if you have bought the houselock upgrade. There will be a 90% chance of failing and 10% chance of succeeding.
+// - [Added] House owners will be warned when someone is doing a breakin or a robbery in their house (the other players name will stay anonymous unless the house owner has bought the security camera upgrade).
+// - [Added] Added automatic ejection from house when the filterscript is unloaded.
+// - [Added] Added automatic ejection from house when the current house the player is in gets deleted.
+// - [Fixed] Fixed problem with some messagebox dialogs not appearing.
+// - [Added] Added feature to set the house interior to the default one if the current one the house uses gets deleted.
+//==============================================================================
+//                                  Changelog v1.3
+//==============================================================================
+// - [Added] Added defines for SendClientMessages and all dialogs except the ones wich uses list items (now you can just replace these with yours instead of translating the script everytime a new release is out).
+// - [Fixed] Fixed small typo in /removehcar.
+// - [Fixed] Fixed small typo in a comment in the configuration section wich was misleading.
+// - [Added] Added /changehcar - this command allows you to change the model id for a housecar.
+// - [Added] Added Madd Dogg's Mansion as a house interior (house interior #10)
+//==============================================================================
+//                                  Changelog v1.2
+//==============================================================================
+// - [Added] Added support for interior input in /createhouse (optional parameter).
+// - [Added] Players will now respawn in their house if they were in their house during a filterscript exit.
+// - [Fixed] Fixed small bug with house previewing.
+// - [Fixed] Fixed housecar problem.
+// - [Added] Housecars now save when the filterscript is unloaded.
+// - [Added] Added a new define for disabling the upgrading of house interiors (#define GH_HINTERIOR_UPGRADE).
+// - [Added] You will be teleported outside the house when you sell your house.
+//==============================================================================
+//                                  Changelog v1.1.3
+//==============================================================================
+// - [Added] Added pickup support (You can now use pickups instead of checkpoints by commenting GH_USE_CPS).
+//==============================================================================
+//                                  Changelog v1.1.2
+//==============================================================================
+// - [Fixed] Fixed small typo with the description of GetFreeHouseID (Line 1638).
+// - [Fixed] Fixed small problem with house buying (Line 309-311).
+//==============================================================================
+//                                  Changelog v1.1.1
+//==============================================================================
+// - [Fixed] Fixed small bug with waiting before previewing a new house interior.
+// - [Fixed] Fixed small bug with house interior buying.
+//==============================================================================
+//                                  Changelog v1.1
+//==============================================================================
+// - [Fixed] Bug with 3D text not updating sometimes.
+// - [Fixed] Bug in SaveHouseCar (it didn't delete the vehicle when you quit).
+// - [Added] Define if you want to use map icons or not.
+// - [Added] Weapon storaging for the house storage (needs to be enabled in script).
+// - [Removed] Removed the define INVALID_CMD_MSG (it will use the one in your gm).
+// - [Changed] Changed the default dialog ID as it would mess up with my carmenu filterscript.
+// - [Added] Added /ghcmds - handy if you forgot/don't know all the commands for this script.

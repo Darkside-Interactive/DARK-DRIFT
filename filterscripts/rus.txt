@@ -1,0 +1,20 @@
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(235) : ошибка 017: необъявленный символ "VectorSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(235) : предупреждение 213: несовпадение типов
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(300) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(589) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(629) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(649) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(660) : ошибка 017: необъявленный символ "CreateActor"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(661) : ошибка 017: необъявленный символ "SetActorInvulnerable"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(665) : ошибка 017: необъявленный символ "DestroyActor"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(669) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(740) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(766) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(1381) : ошибка 017: необъявленный символ "GetVehiclePoolSize"
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(1525) : ошибка 025: заголовок функции отличается от прототипа
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(1557) : предупреждение 235: public-функция нуждается в опережающем объявлении (идентификатор "OnPlayerGiveDamageActor")
+C:\Users\egork\Desktop\Сервера\Dark Drift сервер\pawno\include\predator.inc(1643) : ошибка 017: необъявленный символ "GetPlayerPoolSize"
+Pawn compiler 3.2.3664	 	 	Copyright (c) 1997-2016, ITB CompuPhase
+
+
+Ошибок:14.

@@ -1,0 +1,33 @@
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(1) : ошибка 010: неверная функция или объявление
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(3) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(4) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(5) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(6) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(7) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(8) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(9) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(10) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(11) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(12) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(13) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(15) : ошибка 010: неверная функция или объявление
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(17) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(18) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(19) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(20) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(21) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(22) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(23) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(24) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(25) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(26) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(27) : ошибка 008: должно быть постоянным выражением; принят ноль
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(29) : ошибка 010: неверная функция или объявление
+C:\Users\egork\Desktop\Dark Drift сервер\pawno\include\textdraws\speed.inc(31) : ошибка 008: должно быть постоянным выражением; принят ноль
+
+Компиляция остановлена.
+
+Pawn compiler 3.2.3664	 	 	Copyright (c) 1997-2016, ITB CompuPhase
+
+
+Ошибок:26.

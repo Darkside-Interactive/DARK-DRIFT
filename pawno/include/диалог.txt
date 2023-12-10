@@ -1,0 +1,144 @@
+case 8003:
+        {
+            if(response)
+            {
+                new i = GetPlayerVirtualWorld(playerid);
+                switch(listitem)
+                {
+                case 0: SPD(playerid, 8008, 0, "Подтверждение", "Вы точно хотите купить квартиру?\nПри продаже вам вернется 50% от стоимости.\nПри выселении вам ничего не вернется!", "Да", "Нет");
+                case 1: SPD(playerid, 8009, 0, "Подтверждение", "Вы точно хотите продать квартиру?", "Да", "Нет");
+                case 2: SPD(playerid, 8010, 2, "Квартплата", "Остаток\n - На час\n - На 5 часов\n - На сутки\n - На 3 суток\n - На неделю", "Перевести", "Отмена");
+                case 3:
+                    {
+                        if(i != PlayerInfo[playerid][pKvartirakey])return SendClientMessage(playerid, 0xFFFF00AA, "Вы не владелец данной квартиры!");
+                        if(kvartinfo[i][lock] == 0) kvartinfo[i][lock] = 1, SendClientMessage(playerid, 0xFFFF00AA, "Дверь закрыта");
+                        else kvartinfo[i][lock] = 0, SendClientMessage(playerid, 0xFFFF00AA, "Дверь открыта");
+                    }
+                case 4:
+                    {
+                        if(kvartinfo[i][aptek] == 0) return SendClientMessage(playerid, COLOR_GREY, "В квартире нет аптечек");
+                        else
+                        {
+                            kvartinfo[i][aptek] -= 1;
+                            SetPlayerHealth(playerid, 100);
+                            SendClientMessage(playerid, 0xFFFF00AA, "Вы вылечены");
+                        }
+                    }
+                case 5:
+                    {
+                        new lockkkk[8];
+                        if(kvartinfo[i][lock] == 1)lockkkk = "Закрыто";
+                        else lockkkk = "Открыто";
+                        format(stringg,200,"{ffffff}Аптек: %d штук\n{ffffff}Дверной замок: %s \n",kvartinfo[i][aptek], lockkkk);
+                        SPD(playerid,64,DIALOG_STYLE_MSGBOX,"Информация",stringg,"Ок","");
+                    }
+                }
+            }
+        }
+    case 8008:
+        {
+            if(!response) return true;
+            new i = GetPlayerVirtualWorld(playerid);
+            if(!strcmp(kvartinfo[i][vladelec],"None",true))
+            {
+                if(PlayerInfo[playerid][pKvartirakey] != 0)return SendClientMessage(playerid, 0x9ACD32AA, "У вас уже есть квартира!");
+                if(PlayerInfo[playerid][pBank] < 100000) return SendClientMessage(playerid, COLOR_WHITE, "У вас нет столько денег!");
+                strmid(kvartinfo[i][vladelec], PlayerInfo[playerid][pname], 0, strlen(PlayerInfo[playerid][pname]), 32);
+                SendClientMessage(playerid, COLOR_WHITE, "Поздравляем с покупкой!");
+                SendClientMessage(playerid, 0xFFFF00AA, "Внимание! Вас могут выселить если квартира не будет вовремя оплачена");
+                SendClientMessage(playerid, 0xFFFF00AA, "Стоимость квартплаты: 200 вирт в час");
+                PlayerInfo[playerid][pBank] -= 100000;
+                PlayerInfo[playerid][pKvartirakey] = i;
+                PlayerInfo[playerid][pFuelcar] = 100;
+                if(PlayerInfo[playerid][pCar] == 0) { PlayerInfo[playerid][pCar] = 462; }
+                updatekvar(i);
+                savekvart();
+                OnPlayerUpdateRL(playerid);
+                return true;
+            }
+            else return SendClientMessage(playerid, 0xAA3333AA, "Эта квартира уже кем-то куплена");
+        }
+    case 8009:
+        {
+            if(!response) return true;
+            new i = GetPlayerVirtualWorld(playerid);
+            new x = PlayerInfo[playerid][pKvartirakey];
+            if(x != i)return SendClientMessage(playerid, COLOR_GREY, "Вы не владелец этой квартиры!");
+            strmid(kvartinfo[i][vladelec], "None", 0, strlen("None"), 5);
+            PlayerInfo[playerid][pKvartirakey] = 0;
+            kvartinfo[i][lock] = 0;
+            PlayerInfo[playerid][pBank] += 50000;
+            SendClientMessage(playerid, COLOR_WHITE, "Квартира продана");
+            SetPlayerPos(playerid,kvartinfo[i][pXpic],kvartinfo[i][pYpic],kvartinfo[i][pZpic]);
+            SetPlayerInterior(playerid,15);
+            SetPlayerVirtualWorld(playerid, kvartinfo[i][world]);
+            updatekvar(i);
+            savekvart();
+            OnPlayerUpdateRL(playerid);
+            return true;
+        }
+    case 8010:
+        {
+            if(!response) return true;
+            new i = GetPlayerVirtualWorld(playerid), dengi;
+            if(PlayerInfo[playerid][pKvartirakey] != i)return SendClientMessage(playerid, 0xAA3333AA, "Ты не у себя в квартире");
+            switch(listitem)
+            {
+            case 0:return SendMes(playerid, 0xFFFF00AA, "Оплачено на: %d вирт",kvartinfo[i][plata]);
+            case 1:dengi = 200;
+            case 2:dengi = 1000;
+            case 3:dengi = 4800;
+            case 4:dengi = 14400;
+            case 5:dengi = 33600;
+            }
+            if(kvartinfo[i][plata]+dengi > 35000)return SendClientMessage(playerid,COLOR_WHITE,"Вы не можете заплатить больше чем на неделю!");
+            if(PlayerInfo[playerid][pBank] < dengi)return SendClientMessage(playerid, 0xAA3333AA, "Не хватает денег");
+            kvartinfo[i][plata] += dengi;
+            PlayerInfo[playerid][pBank] -= dengi;
+            SendMes(playerid, 0xFFFF00AA,"Вы перевели: %d вирт", dengi);
+            return true;
+        }
+case D_POD:
+        {
+            if(!response) return true;
+            if(listitem == 0)
+            {
+                if(PlayerInfo[playerid][pKvartirakey] != 0)
+                {
+                    if(PlayerInfo[playerid][pCar] == 462)return SendClientMessage(playerid,COLOR_GRAD1,"У вас нету транспортного средства");
+                    new hh = GetPVarInt(playerid, "podeezd");
+                    DestroyVehicle(caridkvart[playerid]);
+                    caridkvart[playerid] = CreateVehicle(PlayerInfo[playerid][pCar], PodeezdInfo[hh][carX], PodeezdInfo[hh][carY], PodeezdInfo[hh][carZ], PodeezdInfo[hh][carC], PlayerInfo[playerid][pCvet] , PlayerInfo[playerid][pCvet],5600);
+                    createdcar = caridkvart[playerid];
+                    Fuell[caridkvart[playerid]] = PlayerInfo[playerid][pFuelcar];
+                    createdcar ++;
+                    DeletePVar(playerid, "podeezd");
+                    PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
+                    GetPlayerName(playerid,playername,sizeof(playername));
+                    format(stringg,sizeof(stringg),"accounts/%s.ini",playername);
+                    RepairVehicle(caridkvart[playerid]);
+                    SetVehicleNumberPlate(caridkvart[playerid], PlayerInfo[playerid][pNumbercar]);
+                    AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pVozduho1]);
+                    AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pVozduho2]);
+                    AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pKolesocar]);
+                    AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pNitro]);
+                    AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pGidra]);
+                    if(PJ(caridhouse[playerid]))
+                    {
+                        ChangeVehiclePaintjob(caridkvart[playerid], PlayerInfo[playerid][pPokraska]);
+                        AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pSpoiler]);
+                        AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pBamper1]);
+                        AddVehicleComponent (caridkvart[playerid], PlayerInfo[playerid][pBamper2]);
+                    }
+                }
+                else return SendClientMessage(playerid, COLOR_RED, "У тебя нет квартиры");
+            }
+            else
+            {
+                new i = GetPVarInt(playerid, "podeezd");
+                SetPlayerPos(playerid, 2240.9590, -1190.6875, 1033.7969);
+                SetPlayerVirtualWorld(playerid,    PodeezdInfo[i][podMir][listitem-1]);
+                SetPlayerInterior(playerid,15);
+            }
+            return true;
+        }  

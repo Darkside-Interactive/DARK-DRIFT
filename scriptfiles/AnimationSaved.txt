@@ -1,0 +1,2 @@
+
+ApplyAnimation(playerid, "DEALER", "DEALER_IDLE_02", 4.1, false, false, false, false, 0, false); // 43
