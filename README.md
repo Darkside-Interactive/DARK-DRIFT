@@ -50,7 +50,7 @@
   - плагины;
   - исходный код плагина `Map Andreas`;
 
-# Files directories
+# Директории файлов
 
 
    - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/gamemodes/GodEater.pwn">gamemodes/GodEater.pwn</a> - основной игровой мод;</br></h3>
@@ -59,7 +59,7 @@
    - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/scriptfiles/">scriptfiles</a> - скриптфайлы, в которых находятся настройки сервера и аккаунты.;</br></h3>
 
 
-# Project usage
+# Использование проекта
 
 Все ресурсы находятся под лицензией `SAMP-LICENSE` и являются собственностью `Darkside Interactive`. Использование исходного кода в целях личной выгоды, кражи, передачи третьим лицам или для распространения в массы строго запрещено. </br>
 </br>Все логотипы в`../sources/images/` являются торговыми марками соответствующих компаний и действуют в соответствии с их условиями и лицензиями.
