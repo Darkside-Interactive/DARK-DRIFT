@@ -51,8 +51,13 @@ This repository contains:
 # Files directories
 
 
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/gamemodes/GodEater.pwn">gamemodes/GodEater.pwn</a> - main gamemode;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/filterscripts/">filterscripts</a> - all filterscripts that loads in <a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/server.cfg">server.cfg</a>;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/plugins/">plugins</a> - game plugins;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/scriptfiles/">scriptfiles</a> - scriptfiles that contains server settings and accounts;</br></h3>
 
 
 # Project usage
 
-If you want to use this project in your own goals, please, contact us and check license.
+All resources are under the `SAMP-LICENSE` and are the property of `Darkside-Interactive` Usage of the source code for personal gain, theft, transfer to third parties or for distribution to the masses is strictly prohibited.
+All logos in`../sources/images/` are the trademarks of the respective companies and operate in accordance with their terms and license.

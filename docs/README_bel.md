@@ -51,9 +51,13 @@
 
 # Каталогі файлаў
 
-
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/gamemodes/GodEater.pwn">gamemodes/GodEater.pwn</a> - асноўны гульнявой мод;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/filterscripts/">filterscripts</a> - усе фильтрскрипты, подгружаемые у наладах сервера;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/plugins/">plugins</a> - гульнявыя убудовы;</br></h3>
+   - <h3><a href="https://github.com/Darkside-Interactive/DARK-DRIFT/tree/develop/scriptfiles/">scriptfiles</a> - скрыптавыя файлы, ўтрымліваюць налады і акаўнты;</br></h3>
 
 
 # Выкарыстанне праекта
 
-Калі вы хочаце выкарыстоўваць гэты праект у сваіх уласных мэтах, калі ласка, звяжыцеся з намі і Праверце ліцэнзію.
+Усе рэсурсы знаходзяцца пад ліцэнзіяй `SAMP-LICENSE` і з'яўляюцца ўласнасцю `Darkside Interactive`. Выкарыстанне зыходнага кода ў мэтах асабістай выгады, крадзяжу, перадачы трэцім асобам або для распаўсюджвання ў масы строга забаронена. 
+Усе лагатыпы ў `../sources/images/` з'яўляюцца таварнымі знакамі адпаведных кампаній і дзейнічаюць у адпаведнасці з іх умовамі і ліцэнзіяй.
