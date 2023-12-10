@@ -59,5 +59,5 @@ This repository contains:
 
 # Project usage
 
-All resources are under the `SAMP-LICENSE` and are the property of `Darkside-Interactive` Usage of the source code for personal gain, theft, transfer to third parties or for distribution to the masses is strictly prohibited.
-All logos in`../sources/images/` are the trademarks of the respective companies and operate in accordance with their terms and license.
+All resources are under the `SAMP-LICENSE` and are the property of `Darkside-Interactive` Usage of the source code for personal gain, theft, transfer to third parties or for distribution to the masses is strictly prohibited.</br>
+</br>All logos in`../sources/images/` are the trademarks of the respective companies and operate in accordance with their terms and license.
